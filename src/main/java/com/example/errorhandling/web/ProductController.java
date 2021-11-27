@@ -14,12 +14,6 @@ public class ProductController {
         throw new ObjectNotFoundException(id);
     }
 
-   @ExceptionHandler({ObjectNotFoundException.class})
-    public ModelAndView handleDbExceptions(ObjectNotFoundException e){
-        ModelAndView modelAndView = new ModelAndView("product-not-found");
-        modelAndView.addObject("id", e.getId());
-        modelAndView.setStatus(HttpStatus.NOT_FOUND);
-        return modelAndView;
-   }
+
 
 }
